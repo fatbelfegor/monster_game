@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue tuts</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <form action="">
+      <button v-on:click.prevent="onClick">Knopar</button>
+    </form>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      methods: {
+        onClick: function() {
+          console.log('something important!')
+        }
+      }
+    })
+  </script>
+</body>
+</html>

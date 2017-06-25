@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue tuts</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="vue.js"></script>
+</head>
+<body>
+  <div id="app">
+   <input type="text" v-model="message" v-on:keyup.enter="onClick">
+   <p>
+     <a v-bind:href="link">Gazeta</a>
+   </p>
+   <hr>
+   <p v-html="finishedLink" ></p>
+   <hr>
+   <button v-on:click="increase">Click me</button>
+   <p>{{ counter }}</p>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: "#app",
+     data: {
+         message: '',
+         link: 'http://gazeta.ru',
+         finishedLink: '<a href="http://gazeta.ru">Gazeta</a>',
+         counter: 0,
+     },
+     methods: {
+        onClick: function() {
+          console.log(this.message);
+        },
+        increase: function() {
+          this.counter++;
+        }
+      }
+    })
+  </script>
+</body>
+</html>
